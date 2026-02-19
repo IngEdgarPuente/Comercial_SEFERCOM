@@ -148,4 +148,33 @@ footer {
 
 .wa-btn:hover {
   background: #128C7E; /* Color más oscuro al pasar el mouse */
+
+}
+.btn-emergencia {
+    background: #dc3545;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.4);
+    transition: 0.3s;
+    display: inline-block;
+    border: 3px solid white;
+}
+
+.btn-emergencia:hover {
+    background: #a71d2a;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(220, 53, 69, 0.6);
+}
+
+.section-bar {
+    background: white;
+    border: 2px solid var(--blue-dark);
+    border-radius: 15px; /* Menos redondeado para que se vea más profesional */
+    padding: 20px;
+    margin-bottom: 25px;
 }
