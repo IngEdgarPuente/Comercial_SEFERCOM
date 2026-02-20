@@ -3,141 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comercial SEFERCOM | Edgar Puente</title>
+    <title>Edgar Puente | Comercial SEFERCOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root { --blue-dark: #002d5e; --blue-light: #004a99; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f9; }
-
-        /* 1. CABECERA HORIZONTAL (Tu diseño) */
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
+        
+        /* Cabecera Horizontal Estilo Edgar */
         .header-blue {
             background-color: var(--blue-dark);
             color: white;
-            padding: 25px 0;
+            padding: 20px 0;
             border-bottom: 5px solid var(--blue-light);
         }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo-box {
-            border: 2px solid white;
-            background-color: white;
-            padding: 5px;
-            max-width: 180px;
-        }
-        .text-center-box { text-align: center; flex-grow: 1; }
-        .text-center-box h1 { font-size: 2.2rem; margin: 0; font-weight: bold; }
-        .profile-box {
-            width: 120px;
-            height: 120px;
-            border: 3px solid white;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        /* 2. MENÚ DE SERVICIOS (Los 6 bloques) */
-        .card-service {
-            background: white;
-            border: none;
-            border-radius: 12px;
-            padding: 20px;
-            height: 100%;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .card-service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
+        .header-container { display: flex; align-items: center; justify-content: space-between; }
+        .logo-box { border: 2px solid white; background: white; padding: 5px; max-width: 180px; }
+        .profile-box { width: 110px; height: 110px; border: 3px solid white; border-radius: 10px; object-fit: cover; }
+        
+        /* Secciones */
         .section-title {
             color: var(--blue-dark);
             font-weight: bold;
-            margin: 40px 0 25px;
+            margin: 40px 0 20px;
             border-left: 5px solid var(--blue-light);
             padding-left: 15px;
         }
-
-        /* 3. PORTAFOLIO */
-        .portfolio-img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            filter: grayscale(20%);
+        
+        .card-service {
+            background: white; border: none; border-radius: 12px;
+            padding: 20px; height: 100%; transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+        .card-service:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+        /* Estilo Portafolio */
+        .portfolio-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .portfolio-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .portfolio-text { padding: 15px; font-size: 0.9rem; }
 
         .ws-float { position: fixed; bottom: 20px; right: 20px; width: 60px; z-index: 1000; }
     </style>
 </head>
 <body>
 
-    <header class="header-blue">
+    <header class="header-blue text-center">
         <div class="container header-container">
-            <div class="logo-side">
-                <img src="images/LOGO_SEFERCOM.jpeg" alt="Logo SEFERCOM" class="logo-box img-fluid">
+            <img src="images/LOGO_SEFERCOM.jpeg" alt="Logo" class="logo-box">
+            <div>
+                <h1 class="fw-bold m-0">Comercial SEFERCOM</h1>
+                <p class="m-0">de: Edgar Augusto Puente Angulo</p>
+                <p class="small" style="color: #a0c4ff;">Ingeniería en todos los niveles</p>
             </div>
-            <div class="text-center-box">
-                <h1>Comercial SEFERCOM</h1>
-                <p>de: Edgar Augusto Puente Angulo</p>
-                <p style="color: #a0c4ff;"><strong>Ingeniería en todos los niveles</strong></p>
-            </div>
-            <div class="profile-side">
-                <img src="images/edgar.jpg" alt="Edgar Puente" class="profile-box shadow">
-            </div>
+            <img src="images/edgar.jpg" alt="Edgar" class="profile-box shadow">
         </div>
     </header>
 
-    <div class="container">
+    <div class="container my-5">
+        
         <h2 class="section-title">Servicios Multidisciplinarios</h2>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>⚡ Electricidad Integral</h4>
-                    <p class="small">Hogares, oficinas e industria. Mantenimiento y montaje técnico experto (1998-2015).</p>
+                    <h5>⚡ Electricidad & Mtto.</h5>
+                    <p class="small text-muted">Hogares, oficinas e industria. Diagnóstico y montaje de potencia.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>🤖 Robótica</h4>
-                    <p class="small">Investigación en robótica industrial y social. Prototipado en el LASDAI (2015-2026).</p>
+                    <h5>🤖 Robótica & Heurística</h5>
+                    <p class="small text-muted">Prototipado industrial/social y métodos de búsqueda heurísticos para optimización.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>📉 Simulación y Control</h4>
-                    <p class="small">Modelado avanzado con MATLAB y Simulink para procesos complejos y EDOs.</p>
+                    <h5>📉 Simulación & Control</h5>
+                    <p class="small text-muted">Modelado avanzado con MATLAB/Simulink y diseño de aplicaciones (AppDesign).</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>💻 Soporte y Sistemas</h4>
-                    <p class="small">Mantenimiento de computadoras, redes y gestión de bases de datos MySQL.</p>
+                    <h5>🎓 Consultoría & Clases</h5>
+                    <p class="small text-muted">Álgebra, Estadística, EDOs y Asesoría técnica especializada de tesis.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>🎓 Consultoría Académica</h4>
-                    <p class="small">Asesoría de tesis y clases de Álgebra Lineal, Estadística y Métodos Numéricos.</p>
+                    <h5>💻 Computación & Redes</h5>
+                    <p class="small text-muted">Soporte general de hardware, redes locales y bases de datos MySQL.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-service">
-                    <h4>⚙️ Programación</h4>
-                    <p class="small">Desarrollo en Python, C++, C# y AppDesigner para soluciones de ingeniería.</p>
+                    <h5>⚙️ Programación Senior</h5>
+                    <p class="small text-muted">Desarrollo robusto en Python, C++, C# y Visual Studio para ingeniería.</p>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Portafolio / Trayectoria LASDAI</h2>
-        <div class="row align-items-center bg-white p-4 rounded-4 shadow-sm mb-5">
-            <div class="col-md-6">
-                <p><strong>Investigación Aplicada:</strong> Durante mi etapa en el laboratorio LASDAI (ULA), nos enfocamos en el desarrollo de prototipos de robótica social e industrial, llevando la teoría de control a entornos físicos reales.</p>
-                <p>Nuestra misión siempre fue la formación de nuevos ingenieros y la integración de sistemas complejos.</p>
+        <h2 class="section-title">Portafolio de Proyectos (I+D)</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img src="images/Publicidad.png" alt="App Matlab" class="portfolio-img">
+                    <div class="portfolio-text">
+                        <strong>Control y Simulación</strong>
+                        <p class="text-muted mb-0">Interfaz de control desarrollada en Matlab AppDesign para procesos industriales.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <div class="text-center">
-                    <p class="text-muted italic small">"Transformando la educación técnica en soluciones de ingeniería real."</p>
+            <div class="col-md-8">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <h5>Trayectoria en LASDAI (2015-2026)</h5>
+                    <p>Enfoque en la investigación de robótica social y sistemas autónomos. Desarrollo de algoritmos de control y optimización heurística aplicados a prototipos reales.</p>
+                    <p class="italic text-muted">"Transformando la educación técnica en soluciones de ingeniería real."</p>
                 </div>
             </div>
         </div>
@@ -148,4 +126,8 @@
     </a>
 
     <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-0">© 2026 Comercial SEFERCOM | Edgar Augusto Puente Angulo</p>
+        <p class="mb-0">© 2026 Comercial SEFERCOM | Edgar Puente | +58 424-7785974</p>
+    </footer>
+
+</body>
+</html>
