@@ -6,68 +6,91 @@
     <title>Edgar Puente | Comercial SEFERCOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --blue-web: #004a99; }
-        .hero { background-color: var(--blue-web); color: white; padding: 60px 0; }
-        .card-service { height: 100%; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card-service:hover { transform: translateY(-5px); }
-        .section-title { color: var(--blue-web); border-bottom: 2px solid var(--blue-web); display: inline-block; margin-bottom: 30px; }
+        :root { --blue-primary: #004a99; }
+        .hero { background: linear-gradient(135deg, #004a99 0%, #002d5e 100%); color: white; padding: 50px 0; }
+        .profile-img { width: 180px; height: 180px; object-fit: cover; border: 5px solid white; border-radius: 50%; }
+        .logo-img { max-height: 80px; margin-bottom: 20px; }
+        .section-title { color: var(--blue-primary); border-bottom: 3px solid var(--blue-primary); display: inline-block; margin-bottom: 30px; }
+        .card-service { height: 100%; border-radius: 12px; transition: 0.3s; border: 1px solid #eee; }
+        .card-service:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .ws-float { position: fixed; bottom: 20px; right: 20px; width: 60px; z-index: 100; }
     </style>
 </head>
 <body>
 
     <header class="hero text-center">
         <div class="container">
-            <h1>Comercial SEFERCOM</h1>
-            <p class="lead">Ingeniería, Tecnología y Servicios Técnicos Integrales</p>
-            <p><strong>Ing. Edgar Puente</strong> | 28 años de experiencia (Ex-Investigador LASDAI - ULA)</p>
-            <a href="https://wa.me/584247785974" class="btn btn-light btn-lg">Contactar por WhatsApp</a>
+            <img src="images/LOGO_SEFERCOM.jpeg" alt="Logo SEFERCOM" class="logo-img"> <div class="mb-4">
+                <img src="images/edgar.jpg" alt="Edgar Puente" class="profile-img shadow"> </div>
+            <h1 class="display-4 fw-bold">Comercial SEFERCOM</h1>
+            <p class="h3 mb-4">Ingeniería en todos los niveles</p>
+            <p class="lead px-lg-5">Consultoría Senior con 28 años de trayectoria en la Universidad de los Andes. Especialista en automatización, robótica y soluciones técnicas integrales.</p>
         </div>
     </header>
 
-    <section class="container my-5">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>⚡ Electricidad Integral</h3>
-                    <p>Instalaciones y mantenimiento en Hogares, Oficinas e Industria. Experiencia técnica de campo desde 1998.</p>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+                    <h2 class="h4 section-title">¿Quiénes Somos?</h2>
+                    <p>Un equipo liderado por el Ing. Edgar Puente, con base en el laboratorio <strong>LASDAI</strong> (2015-2026), enfocado en transformar la teoría técnica en soluciones reales.</p>
+                    
+                    <h2 class="h4 section-title mt-4">¿Qué hacemos?</h2>
+                    <p>Brindamos soporte técnico avanzado desde el mantenimiento eléctrico residencial hasta el prototipado de robótica social e industrial.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>🤖 Robótica y Prototipado</h3>
-                    <p>Investigación en Robótica Industrial y Social. Diseño de prototipos funcionales y sistemas embebidos.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>📈 Control y Simulación</h3>
-                    <p>Modelado matemático con MATLAB, Simulink y AppDesigner. Optimización de procesos industriales.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>💻 Soporte IT</h3>
-                    <p>Mantenimiento de computadoras, redes y gestión de bases de datos MySQL.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>💻 Programación</h3>
-                    <p>Desarrollo en Python, C++, C# y soluciones personalizadas para ingeniería.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-service p-3">
-                    <h3>🎓 Consultoría y Clases</h3>
-                    <p>Asesoría de tesis y clases de Álgebra, EDOs, Métodos Numéricos y Estadística.</p>
+
+            <div class="col-lg-8">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">⚡ Electricidad Integral</h3>
+                            <p class="small text-muted">Hogares, oficinas e industria. Mantenimiento y montaje técnico experto.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">🤖 Robótica Industrial/Social</h3>
+                            <p class="small text-muted">Investigación y primeros prototipos funcionales en sistemas autónomos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">📉 Simulación y Control</h3>
+                            <p class="small text-muted">Modelado avanzado con MATLAB y Simulink para procesos complejos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">💻 Soporte y Computación</h3>
+                            <p class="small text-muted">Mantenimiento general de computadoras, redes y MySQL.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">🎓 Asesoría y Docencia</h3>
+                            <p class="small text-muted">Tutorías de Álgebra, EDOs y Estadística. Asesor de tesis de ingeniería.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-service p-3">
+                            <h3 class="h5">⚙️ Programación Aplicada</h3>
+                            <p class="small text-muted">Desarrollo en Python, C++ y AppDesigner para ingeniería.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer class="text-center py-4 bg-light">
-        <p>© 2026 Comercial SEFERCOM - Ingeniería para transformar el mundo</p>
+    <a href="https://wa.me/584247785974" target="_blank">
+        <img src="images/whatsapp-logo.jpg" alt="WhatsApp" class="ws-float shadow-lg rounded-circle"> </a>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">© 2026 Comercial SEFERCOM - Edgar Augusto Puente Angulo</p>
+            <small>Ingeniería de Mérida para el Mundo</small>
+        </div>
     </footer>
 
 </body>
