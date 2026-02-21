@@ -1,106 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comercial SEFERCOM - Ing. Edgar Puente</title>
-    <style>
-        :root { --azul-sefercom: #004a99; --azul-claro: #eef6ff; --verde-wa: #25d366; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
-        
-        header { background: var(--azul-sefercom); color: white; padding: 2rem; text-align: center; border-bottom: 5px solid #003366; }
-        header h1 { margin: 0; font-size: 2.2rem; }
-        header p { margin: 5px 0 0; opacity: 0.9; font-style: italic; }
-
-        .container { max-width: 1000px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-
-        /* Sistema de Pestañas */
-        .tab-menu { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--azul-sefercom); margin-bottom: 20px; }
-        .tab-btn { background: #eee; border: none; padding: 12px 20px; cursor: pointer; font-weight: bold; transition: 0.3s; flex: 1; min-width: 120px; border-radius: 8px 8px 0 0; margin-right: 2px; }
-        .tab-btn.active { background: var(--azul-sefercom); color: white; }
-
-        .tab-content { display: none; animation: fadeIn 0.5s; }
-        .tab-content.active { display: block; }
-
-        /* Galería */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; }
-        .card img { width: 100%; height: auto; display: block; }
-        .card-info { padding: 15px; }
-
-        /* Recursos y Eventos */
-        .item-box { background: var(--azul-claro); padding: 20px; border-radius: 8px; border-left: 6px solid var(--azul-sefercom); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; }
-        .btn-wa { background: var(--verde-wa); color: white; }
-        .btn-blue { background: var(--azul-sefercom); color: white; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Comercial SEFERCOM</h1>
-    <p>Ingeniería con sentido de realidad - M.Sc. Eng. Edgar Puente</p>
-</header>
-
-<div class="container">
-    <div class="tab-menu">
-        <button class="tab-btn active" onclick="openTab(event, 'Galeria')">PROYECTOS</button>
-        <button class="tab-btn" onclick="openTab(event, 'Portafolio')">RECURSOS GRATIS</button>
-        <button class="tab-btn" onclick="openTab(event, 'Eventos')">CURSOS Y TALLERES</button>
-    </div>
-
-    <div id="Galeria" class="tab-content active">
-        <h3>Visualización de Proyectos MATLAB</h3>
-        <div class="gallery">
-            <div class="card">
-                <img src="images/Triangles_01.jpg" alt="Triángulo de Duval">
-                <div class="card-info">
-                    <h4>Diagnóstico de Transformadores</h4>
-                    <p>Implementación de Triángulos de Duval 1, 2 y 5 en MATLAB App Designer.</p>
-                </div>
-            </div>
-            </div>
-    </div>
-
-    <div id="Portafolio" class="tab-content">
-        <h3>Biblioteca Técnica Gratuita</h3>
-        <p>Material exclusivo de investigación. Solicítalo dejando tu contacto.</p>
-        
-        <div class="item-box">
-            <div>
-                <strong>Articulo: Diagnóstico de Transformadores</strong>
-                <p>Resumen técnico del Sistema Automatizado de Gases Disueltos.</p>
-            </div>
-            <a href="https://wa.me/584247785974?text=Hola%20Edgar,%20me%20interesa%20el%20PDF%20del%20Articulo%20de%20Diagnostico.%20Mi%20correo%20es:" class="btn btn-wa" target="_blank">Solicitar por WhatsApp</a>
+<div id="Servicios" class="tab-content active">
+    <h3>Servicios Multidisciplinarios</h3>
+    <div class="services-grid">
+        <div class="service-card">
+            <h4>💻 Programación Senior</h4>
+            <p>Desarrollo de soluciones robustas y escalables en:</p>
+            <ul>
+                <li><strong>Python & C++:</strong> Algoritmos de alto rendimiento.</li>
+                <li><strong>MATLAB & App Designer:</strong> Interfaces industriales (DGA, Control).</li>
+                <li><strong>C# & Visual Studio:</strong> Software de escritorio.</li>
+                <li><strong>MySQL:</strong> Gestión avanzada de bases de datos.</li>
+            </ul>
         </div>
-    </div>
 
-    <div id="Eventos" class="tab-content">
-        <h3>Próximos Eventos</h3>
-        <div class="item-box">
-            <div>
-                <strong>Masterclass: MATLAB para Ingeniería Industrial</strong>
-                <p>De la teoría a la práctica: Álgebra, Métodos Numéricos y App Designer.</p>
-                <p><em>Próximamente: Marzo 2026</em></p>
-            </div>
-            <a href="#" class="btn btn-blue">Pre-inscripción Abierta</a>
+        <div class="service-card">
+            <h4>🎓 Consultoría & Clases</h4>
+            <p>Asesoría técnica especializada y formación de alto nivel en:</p>
+            <ul>
+                <li>Estadística Descriptiva e Inferencial.</li>
+                <li>Métodos Heurísticos y Optimización.</li>
+                <li>Cálculo, Álgebra Lineal y EDOs.</li>
+            </ul>
         </div>
     </div>
 </div>
-
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-</body>
-</html>
