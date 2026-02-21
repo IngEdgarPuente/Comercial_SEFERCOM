@@ -208,14 +208,41 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .nav-tabs-custom {
+        display: grid; /* Cambiamos de flex a cuadrícula */
+        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+        white-space: normal; /* Permitimos que el texto use dos líneas si es necesario */
+        overflow-x: hidden; /* Quitamos el desplazamiento lateral */
+    }
+
     .tab-btn {
-        flex: 1; /* Hace que todas midan lo mismo en el móvil */
-        padding: 10px 5px;
-        font-size: 0.75rem; /* Ajuste fino para pantallas pequeñas */
+        flex: none;
+        width: 100%;
+        padding: 15px 5px;
+        font-size: 0.75rem; 
+        border: 1px solid #eee; /* Un pequeño borde para separar los botones */
+        border-bottom: 3px solid transparent;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px; /* Asegura que todos tengan el mismo alto */
     }
+
+    .tab-btn.active {
+        background: var(--blue-light);
+        color: white;
+        border-bottom: 3px solid var(--blue-dark);
+    }
+
     .header-container {
-        flex-direction: column; /* Apila el logo y la foto en el celular */
+        flex-direction: column;
+        padding: 10px;
     }
+    
+    .logo-box { max-width: 120px; margin-bottom: 10px; }
+    .profile-box { width: 100px; height: 100px; }
 }
+
 
 
