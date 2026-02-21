@@ -2,187 +2,10 @@
     --blue-dark: #1a3c6e;
     --blue-light: #004a99;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-}
+/* ... (mantén tu código anterior de body, header, etc.) ... */
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  background: #1a3c6e;
-  color: white;
-  text-align: center;
-  padding: 30px 0;
-}
-
-header h1 {
-  font-size: 2.5em;
-}
-
-header p {
-  font-size: 1.2em;
-  opacity: 0.9;
-}
-
-.hero {
-  background: #e3f2fd;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2em;
-  color: #1a3c6e;
-}
-
-.hero p {
-  font-size: 1.2em;
-  margin: 20px 0;
-}
-
-.btn {
-  display: inline-block;
-  background: #1a3c6e;
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-.about, .courses, .contact {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 20px auto;
-  border: 5px solid #1a3c6e;
-  display: block;
-}
-
-.courses ul {
-  list-style: none;
-  margin: 30px 0;
-}
-
-.courses li {
-  margin: 15px 0;
-  font-size: 1.2em;
-  text-align: left;
-  max-width: 500px;
-  margin: 15px auto;
-}
-
-form {
-  max-width: 500px;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, select, button {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-button {
-  background: #1a3c6e;
-  color: white;
-  cursor: pointer;
-}
-
-footer {
-  background: #1a3c6e;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9em;
-}
-.prices {
-  padding: 60px 0;
-  background: #f0f8ff;
-}
-
-.prices table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-.prices th, .prices td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.prices th {
-  background: #1a3c6e;
-  color: white;
-}
-.wa-btn {
-  background: #25D366; /* Color oficial de WhatsApp */
-  margin-top: 15px;
-  display: inline-block;
-  transition: background 0.3s ease;
-}
-
-.wa-btn:hover {
-  background: #128C7E; /* Color más oscuro al pasar el mouse */
-
-}
-.btn-emergencia {
-    background: #dc3545;
-    color: white;
-    padding: 20px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.3rem;
-    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.4);
-    transition: 0.3s;
-    display: inline-block;
-    border: 3px solid white;
-}
-
-.btn-emergencia:hover {
-    background: #a71d2a;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 15px 25px rgba(220, 53, 69, 0.6);
-}
-
-.section-bar {
-    background: white;
-    border: 2px solid var(--blue-dark);
-    border-radius: 15px; /* Menos redondeado para que se vea más profesional */
-    padding: 20px;
-    margin-bottom: 25px;
-}
-/* Menú de Pestañas Mejorado para Móvil */
+/* Estilo Base de las Pestañas (PC y Tablet) */
 .nav-tabs-custom { 
     display: flex; 
     justify-content: center; 
@@ -191,58 +14,54 @@ footer {
     position: sticky; 
     top: 0; 
     z-index: 1000;
-    overflow-x: auto; /* Permite deslizar si no cabe */
-    white-space: nowrap; /* Evita que el texto salte de línea */
 }
 
 .tab-btn { 
     background: none; 
     border: none; 
-    padding: 12px 15px; /* Reducimos un poco el padding */
+    padding: 15px 25px; 
     cursor: pointer; 
     font-weight: bold; 
     color: var(--blue-dark); 
     transition: 0.3s; 
     border-bottom: 4px solid transparent;
-    font-size: 0.85rem; /* Fuente un poco más pequeña para móviles */
 }
 
+.tab-btn.active {
+    color: var(--blue-light);
+    border-bottom: 4px solid var(--blue-light);
+}
+
+/* REGLAS EXCLUSIVAS PARA CELULAR (Móvil) */
 @media (max-width: 600px) {
     .nav-tabs-custom {
-        display: grid; /* Cambiamos de flex a cuadrícula */
-        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-        white-space: normal; /* Permitimos que el texto use dos líneas si es necesario */
-        overflow-x: hidden; /* Quitamos el desplazamiento lateral */
+        display: grid !important; /* Fuerza la cuadrícula */
+        grid-template-columns: 1fr 1fr; /* 2 columnas exactas */
+        grid-template-rows: auto auto; /* 2 filas exactas */
+        white-space: normal; 
+        overflow: hidden;
     }
 
     .tab-btn {
-        flex: none;
-        width: 100%;
         padding: 15px 5px;
-        font-size: 0.75rem; 
-        border: 1px solid #eee; /* Un pequeño borde para separar los botones */
-        border-bottom: 3px solid transparent;
+        font-size: 0.8rem; 
+        border: 1px solid #f0f0f0; /* Cuadriculado sutil */
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 50px; /* Asegura que todos tengan el mismo alto */
+        min-height: 60px;
     }
 
     .tab-btn.active {
-        background: var(--blue-light);
-        color: white;
-        border-bottom: 3px solid var(--blue-dark);
+        background: var(--blue-light) !important;
+        color: white !important;
+        border-bottom: none;
     }
 
     .header-container {
         flex-direction: column;
-        padding: 10px;
+        display: flex;
+        align-items: center;
     }
-    
-    .logo-box { max-width: 120px; margin-bottom: 10px; }
-    .profile-box { width: 100px; height: 100px; }
 }
-
-
-
