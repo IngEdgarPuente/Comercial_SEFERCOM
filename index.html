@@ -1,25 +1,76 @@
-<div id="Servicios" class="tab-content active">
-    <h3>Servicios Multidisciplinarios</h3>
-    <div class="services-grid">
-        <div class="service-card">
-            <h4>💻 Programación Senior</h4>
-            <p>Desarrollo de soluciones robustas y escalables en:</p>
-            <ul>
-                <li><strong>Python & C++:</strong> Algoritmos de alto rendimiento.</li>
-                <li><strong>MATLAB & App Designer:</strong> Interfaces industriales (DGA, Control).</li>
-                <li><strong>C# & Visual Studio:</strong> Software de escritorio.</li>
-                <li><strong>MySQL:</strong> Gestión avanzada de bases de datos.</li>
-            </ul>
-        </div>
+<style>
+  .tabs-container { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1000px; margin: 20px auto; }
+  .tab-menu { display: flex; border-bottom: 2px solid #004a99; margin-bottom: 20px; }
+  .tab-btn { background: #f0f0f0; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; color: #555; transition: 0.3s; margin-right: 5px; border-radius: 8px 8px 0 0; }
+  .tab-btn.active { background: #004a99; color: white; }
+  .tab-content { display: none; padding: 20px; border: 1px solid #ddd; border-radius: 0 0 8px 8px; animation: fadeIn 0.5s; }
+  .tab-content.active { display: block; }
+  
+  /* Estilos para los recursos (PDFs) */
+  .resource-item { display: flex; justify-content: space-between; align-items: center; background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-left: 5px solid #004a99; border-radius: 4px; }
+  .btn-request { background: #25d366; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9em; }
+  
+  /* Galería */
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+  .gallery-grid img { width: 100%; border-radius: 8px; border: 1px solid #ccc; }
 
-        <div class="service-card">
-            <h4>🎓 Consultoría & Clases</h4>
-            <p>Asesoría técnica especializada y formación de alto nivel en:</p>
-            <ul>
-                <li>Estadística Descriptiva e Inferencial.</li>
-                <li>Métodos Heurísticos y Optimización.</li>
-                <li>Cálculo, Álgebra Lineal y EDOs.</li>
-            </ul>
-        </div>
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+
+<div class="tabs-container">
+  <div class="tab-menu">
+    <button class="tab-btn active" onclick="openTab(event, 'Galeria')">Galería</button>
+    <button class="tab-btn" onclick="openTab(event, 'Portafolio')">Recursos (PDF)</button>
+    <button class="tab-btn" onclick="openTab(event, 'Eventos')">Eventos</button>
+  </div>
+
+  <div id="Galeria" class="tab-content active">
+    <h3>Proyectos y Modelado</h3>
+    <div class="gallery-grid">
+      <div>
+        <img src="images/Triangles_01.jpg" alt="Triángulo de Duval 1">
+        <p>Análisis de Gases Disueltos (Duval)</p>
+      </div>
+      <div>
+        <img src="images/Triangles_02.jpg" alt="Triángulo de Duval 2">
+        <p>Interpretación Diagnóstica</p>
+      </div>
+      </div>
+  </div>
+
+  <div id="Portafolio" class="tab-content">
+    <h3>Biblioteca Técnica</h3>
+    <p>Solicita estos recursos de forma gratuita indicando tu nombre y correo.</p>
+    
+    <div class="resource-item">
+      <div>
+        <strong>Resumen Técnico: Triángulos de Duval</strong>
+        <br><small>Metodología avanzada para diagnóstico de fallas.</small>
+      </div>
+      <a href="https://wa.me/584247785974?text=Hola%20Edgar,%20me%20interesa%20el%20PDF%20de%20Triangulos%20de%20Duval.%20Mi%20correo%20es:" class="btn-request" target="_blank">Solicitar por WhatsApp</a>
     </div>
+  </div>
+
+  <div id="Eventos" class="tab-content">
+    <h3>Próximas Formaciones</h3>
+    <div style="background: #eef6ff; padding: 20px; border-radius: 10px; border: 1px dashed #004a99;">
+      <h4>Masterclass: Matlab Aplicado a la Ingeniería</h4>
+      <p><strong>Inicio:</strong> 09 de Marzo de 2026</p>
+      <p>Domina desde Algebra Lineal hasta el desarrollo de Apps industriales.</p>
+      <a href="#" style="background:#004a99; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; display:inline-block;">Inscripciones próximamente</a>
+    </div>
+  </div>
 </div>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; tabcontent[i].className = tabcontent[i].className.replace(" active", ""); }
+    tablinks = document.getElementsByClassName("tab-btn");
+    for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).className += " active";
+    evt.currentTarget.className += " active";
+  }
+</script>
