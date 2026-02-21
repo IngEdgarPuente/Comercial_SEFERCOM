@@ -178,3 +178,39 @@ footer {
     padding: 20px;
     margin-bottom: 25px;
 }
+/* Menú de Pestañas Mejorado para Móvil */
+.nav-tabs-custom { 
+    display: flex; 
+    justify-content: center; 
+    border-bottom: 2px solid var(--blue-light); 
+    background: white; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    overflow-x: auto; /* Permite deslizar si no cabe */
+    white-space: nowrap; /* Evita que el texto salte de línea */
+}
+
+.tab-btn { 
+    background: none; 
+    border: none; 
+    padding: 12px 15px; /* Reducimos un poco el padding */
+    cursor: pointer; 
+    font-weight: bold; 
+    color: var(--blue-dark); 
+    transition: 0.3s; 
+    border-bottom: 4px solid transparent;
+    font-size: 0.85rem; /* Fuente un poco más pequeña para móviles */
+}
+
+@media (max-width: 600px) {
+    .tab-btn {
+        flex: 1; /* Hace que todas midan lo mismo en el móvil */
+        padding: 10px 5px;
+        font-size: 0.75rem; /* Ajuste fino para pantallas pequeñas */
+    }
+    .header-container {
+        flex-direction: column; /* Apila el logo y la foto en el celular */
+    }
+}
+
