@@ -6,42 +6,52 @@
     <title>Edgar Puente | Comercial SEFERCOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --blue-dark: #002d5e; --blue-light: #004a99; }
+        :root { --blue-dark: #002d5e; --blue-light: #004a99; --verde-wa: #25d366; }
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
         
-        /* Cabecera Horizontal Estilo Edgar */
+        /* Cabecera Estilo Edgar */
         .header-blue {
             background-color: var(--blue-dark);
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             border-bottom: 5px solid var(--blue-light);
         }
-        .header-container { display: flex; align-items: center; justify-content: space-between; }
-        .logo-box { border: 2px solid white; background: white; padding: 5px; max-width: 180px; }
-        .profile-box { width: 110px; height: 110px; border: 3px solid white; border-radius: 10px; object-fit: cover; }
-        
-        /* Secciones */
-        .section-title {
-            color: var(--blue-dark);
-            font-weight: bold;
-            margin: 40px 0 20px;
-            border-left: 5px solid var(--blue-light);
-            padding-left: 15px;
+        .header-container { display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; }
+        .logo-box { border: 2px solid white; background: white; padding: 5px; max-width: 150px; border-radius: 5px; }
+        .profile-box { width: 120px; height: 120px; border: 3px solid white; border-radius: 50%; object-fit: cover; }
+
+        /* Sistema de Pestañas Moderno */
+        .nav-tabs-custom { display: flex; justify-content: center; border-bottom: 2px solid var(--blue-light); margin-top: -2px; background: white; sticky: top; }
+        .tab-btn { 
+            background: none; border: none; padding: 15px 25px; cursor: pointer; 
+            font-weight: bold; color: var(--blue-dark); transition: 0.3s; border-bottom: 4px solid transparent;
         }
-        
+        .tab-btn.active { color: var(--blue-light); border-bottom: 4px solid var(--blue-light); background: #f0f7ff; }
+
+        .tab-content { display: none; padding: 40px 0; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        /* Tarjetas de Servicios */
         .card-service {
-            background: white; border: none; border-radius: 12px;
-            padding: 20px; height: 100%; transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: white; border: 1px solid #eee; border-radius: 12px;
+            padding: 20px; height: 100%; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .card-service:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card-service:hover { transform: translateY(-5px); border-color: var(--blue-light); }
+        .card-service h5 { color: var(--blue-dark); font-weight: bold; }
 
-        /* Estilo Portafolio */
-        .portfolio-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .portfolio-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
-        .portfolio-text { padding: 15px; font-size: 0.9rem; }
+        /* Galería e Items */
+        .portfolio-img { width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .resource-box { 
+            background: white; padding: 20px; border-radius: 10px; 
+            border-left: 6px solid var(--blue-light); display: flex; 
+            justify-content: space-between; align-items: center; margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-        .ws-float { position: fixed; bottom: 20px; right: 20px; width: 60px; z-index: 1000; }
+        .ws-float { position: fixed; bottom: 20px; right: 20px; width: 60px; z-index: 1000; transition: 0.3s; }
+        .ws-float:hover { transform: scale(1.1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -49,100 +59,138 @@
     <header class="header-blue text-center">
         <div class="container header-container">
             <img src="images/LOGO_SEFERCOM.jpeg" alt="Logo" class="logo-box">
+            <div class="text-center my-3">
+                <h1 class="fw-bold m-0">Comercial SEFERCOM</h1>
+                <p class="m-0 text-uppercase tracking-wide">M.Sc. Eng. Edgar Augusto Puente Angulo</p>
+                <p class="small" style="color: #a0c4ff;">Ingeniería con sentido de realidad</p>
+            </div>
             <img src="images/perfi.jpg" alt="Edgar" class="profile-box shadow">           
-        </div>
-        <div class="mt-3">
-            <h1 class="fw-bold m-0">Comercial SEFERCOM</h1>
-            <p class="m-0">de: Edgar Augusto Puente Angulo</p>
-            <p class="small" style="color: #a0c4ff;">Ingeniería en todos los niveles</p>
         </div>
     </header>
 
-    <div class="container my-5">
+    <nav class="nav-tabs-custom shadow-sm">
+        <button class="tab-btn active" onclick="openTab(event, 'Servicios')">ESPECIALIDADES</button>
+        <button class="tab-btn" onclick="openTab(event, 'Galeria')">GALERÍA (I+D)</button>
+        <button class="tab-btn" onclick="openTab(event, 'Recursos')">RECURSOS GRATIS</button>
+        <button class="tab-btn" onclick="openTab(event, 'Eventos')">PRÓXIMOS CURSOS</button>
+    </nav>
+
+    <div class="container">
         
-        <h2 class="section-title">Servicios Multidisciplinarios</h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>⚡ Electricidad & Mtto.</h5>
-                    <p class="small text-muted">Hogares, oficinas e industria. Diagnóstico y montaje de potencia.</p>
+        <div id="Servicios" class="tab-content active">
+            <h2 class="text-center mb-5" style="color: var(--blue-dark);">Servicios Multidisciplinarios</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>⚡ Electricidad & Mtto.</h5>
+                        <p class="small text-muted">Hogares, oficinas e industria. Diagnóstico y montaje de potencia.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>🤖 Robótica Aplicada</h5>
-                    <p class="small text-muted">Investigación y prototipado de robótica social e industrial (LASDAI).</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>🤖 Robótica Aplicada</h5>
+                        <p class="small text-muted">Investigación y prototipado de robótica social e industrial (LASDAI).</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>🔍 Métodos Heurísticos</h5>
-                    <p class="small text-muted">Algoritmos de búsqueda y optimización para problemas complejos de ingeniería.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>🔍 Métodos Heurísticos</h5>
+                        <p class="small text-muted">Algoritmos de búsqueda y optimización (Evolución Diferencial).</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>📊 Estadística & Datos</h5>
-                    <p class="small text-muted">Análisis descriptivo, procesamiento de datos y validación de resultados.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>📊 Estadística & Datos</h5>
+                        <p class="small text-muted">Análisis descriptivo, procesamiento y validación académica.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>📉 Simulación & Control</h5>
-                    <p class="small text-muted">Modelado avanzado con MATLAB/Simulink y diseño en AppDesign.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>📉 Simulación & Control</h5>
+                        <p class="small text-muted">Modelado avanzado con MATLAB/Simulink y AppDesigner.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>🎓 Consultoría & Clases</h5>
-                    <p class="small text-muted">Álgebra, EDOs y Asesoría técnica especializada para tesis de grado.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>🎓 Área Académica</h5>
+                        <p class="small text-muted">Álgebra, EDOs, Métodos Numéricos y Asesoría de Tesis.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>💻 Computación & Redes</h5>
-                    <p class="small text-muted">Soporte de hardware, redes locales y gestión de bases de datos MySQL.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>💻 Computación & Redes</h5>
+                        <p class="small text-muted">Soporte Hardware, Redes Locales y Bases de Datos MySQL.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card-service text-center">
-                    <h5>⚙️ Programación Senior</h5>
-                    <p class="small text-muted">Desarrollo en Python, C++, C# y soluciones en Visual Studio.</p>
+                <div class="col-md-3">
+                    <div class="card-service text-center">
+                        <h5>⚙️ Programación Senior</h5>
+                        <p class="small text-muted">Desarrollo robusto en Python, C++, C# y Visual Studio.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Portafolio de Proyectos (I+D)</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="portfolio-item">
-                    <img src="images/Triangles_01.jpg" alt="App Matlab" class="portfolio-img">
-                    <img src="images/Triangles_02.jpg" alt="App Matlab" class="portfolio-img">
-                    <div class="portfolio-text">
-                        <strong>Control y Simulación</strong>
-                        <p class="text-muted mb-0">Interfaz de control desarrollada en Matlab AppDesign para procesos industriales.</p>
-                    </div>
+        <div id="Galeria" class="tab-content">
+            <h2 class="text-center mb-4">Portafolio Visual</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/Triangles_01.jpg" alt="Triángulo de Duval 1" class="portfolio-img">
+                    <img src="images/Triangles_02.jpg" alt="Triángulo de Duval 2" class="portfolio-img">
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                    <img src="images/Planta_Termica.jpg" alt="App Matlab" class="portfolio-img">
-                    <img src="images/Planta_Termica_02.jpg" alt="App Matlab" class="portfolio-img">
+                <div class="col-md-6">
+                    <img src="images/Planta_Termica.jpg" alt="Planta Térmica" class="portfolio-img">
+                    <img src="images/Planta_Termica_02.jpg" alt="Planta Térmica 02" class="portfolio-img">
                 </div>
             </div>
         </div>
+
+        <div id="Recursos" class="tab-content">
+            <h2 class="text-center mb-4">Biblioteca de Ingeniería</h2>
+            <div class="resource-box">
+                <div>
+                    <h5 class="mb-1">📄 Articulo: Diagnóstico de Transformadores</h5>
+                    <p class="mb-0 text-muted">Resumen técnico: Triángulos de Duval 1, 2 y 5.</p>
+                </div>
+                <a href="https://wa.me/584247785974?text=Hola%20Edgar,%20solicito%20el%20PDF%20de%20Triangulos%20de%20Duval" class="btn btn-success" target="_blank">Pedir PDF</a>
+            </div>
+            </div>
+
+        <div id="Eventos" class="tab-content text-center">
+            <h2 class="mb-4">Próximas Formaciones</h2>
+            <div class="p-5 bg-white shadow-sm rounded-4 border">
+                <h3 class="text-primary">Masterclass: MATLAB Aplicado</h3>
+                <p class="lead">Desde Algebra Lineal hasta interfaces App Designer para la industria.</p>
+                <p><strong>Fecha:</strong> Marzo 2026</p>
+                <a href="https://wa.me/584247785974?text=Me%20interesa%20la%20Masterclass%20de%20Matlab" class="btn btn-primary btn-lg">Pre-inscribirme</a>
+            </div>
+        </div>
+
     </div>
 
     <a href="https://wa.me/584247785974" target="_blank">
         <img src="images/whatsapp-logo.jpg" alt="WhatsApp" class="ws-float">
     </a>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-0">© 2026 Comercial SEFERCOM | Edgar Puente | +58 424-7785974</p>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0">© 2026 Comercial SEFERCOM | M.Sc. Edgar Puente | Mérida, Venezuela</p>
     </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
-
-
-
